@@ -15,11 +15,11 @@ def sine(a):
 def cosine(a):
     return math.cos(math.radians(a))
 def tangent(a):
-    return math.tangent(math.radians(a))
+    return math.tan(math.radians(a))
 def logarithm(a):
     return math.log10(a)
 def factorial(a):
-    return math.factorial(math.radians(a))
+    return math.factorial(int(a))
 def divide(a,b):
     if b == 0:
         return "cant divide by 0"
@@ -49,7 +49,7 @@ while True:
     elif oprationn == "clear history":
             history.clear()
             # clear file content also 
-            open("history.txt,w").close()
+            open("history.txt" , w").close()
             print("history cleared")
             continue
 
@@ -108,8 +108,8 @@ while True:
             result = "invaild opration "
         record = f"{num1}{oprationn}{num2} = {result}"
     print ("Result = ",result)
-history.apppemd(record)
-#save history to file 
-with open ("history.txt","a")as file :
+    history.apppend(record)
+    #save history to file 
+    with open ("history.txt","a")as file :
     file.write(record + "\n")
 
