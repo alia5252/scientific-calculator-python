@@ -25,11 +25,13 @@ def divide(a,b):
         return "cant divide by 0"
     return a/b
 def square_root(a):
+    if a < 0:
+        return "Square root undefined for negative numbers"
     return math.sqrt(a)
 
 while True:
     print("\n simple calculator")
-    print("oprationn :+,-,*,/,**,sqrt")
+    print("Operations: +, -, *, /, %, **, sqrt, sin, cos, tan, log, fact")
     print("type history to see history")
     print("type 'clear history' to clean history")
     print("type 'exit' to stop")
@@ -49,7 +51,7 @@ while True:
     elif oprationn == "clear history":
             history.clear()
             # clear file content also 
-            open("history.txt" , w").close()
+            open("history.txt", "w").close()
             print("history cleared")
             continue
 
@@ -108,8 +110,8 @@ while True:
             result = "invaild opration "
         record = f"{num1}{oprationn}{num2} = {result}"
     print ("Result = ",result)
-    history.apppend(record)
+    history.append(record)
     #save history to file 
     with open ("history.txt","a")as file :
-    file.write(record + "\n")
+        file.write(record + "\n")
 
